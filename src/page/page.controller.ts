@@ -1,11 +1,12 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post } from "@nestjs/common";
-import { ProductModel } from "../product/product.model";
-import { FindProductDto } from "../product/dto/find-product.dto";
 import { PageModel } from "./page.model";
 import { FindPageDto } from "./dto/find-page.dto";
+import { ConfigService } from "@nestjs/config";
 
 @Controller('page')
 export class PageController {
+  constructor(private readonly configService:ConfigService) {
+  }
   @Post("create")
   async create(@Body() dto: Omit<PageModel, "_id">) {
 
@@ -13,7 +14,7 @@ export class PageController {
 
   @Get(":id")
   async get(@Param("id") id: string) {
-
+    this.configService.get('T')
   }
 
   @Patch(":id")
