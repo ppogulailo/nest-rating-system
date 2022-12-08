@@ -66,6 +66,10 @@ export class PageController {
   @HttpCode(200)
   @Post("find")
   async find(@Body() dto: FindPageDto) {
-    return this.pageService.findWithReviews(dto);
+    return this.pageService.findByCategories(dto.firstCategory);
+  }
+  @Get("textSearch/:text")
+  async textSearch(@Param("text") text: string) {
+    return this.pageService.findByText(text);
   }
 }
