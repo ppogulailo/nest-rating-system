@@ -26,6 +26,7 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/jwt": "^9.0.0",
     "@nestjs/mongoose": "^9.2.1",
+    "@nestjs/passport": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
     "@typegoose/typegoose": "^9.13.2",
     "@types/mongoose": "^5.11.97",
@@ -34,6 +35,8 @@
     "class-validator": "^0.13.2",
     "mongoose": "^6.8.0",
     "nestjs-typegoose": "^7.1.38",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"
