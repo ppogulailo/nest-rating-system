@@ -20,6 +20,10 @@ jobs:
       - name: 'Use Node.js v${{ matrix.node-version }}'
         uses: actions/setup-node@v3
         with:
+          registry: docker.pkg.github.com
+          name: docker.pkg.github.com/PogunGun/NestJS
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
           node-version: ${{ matrix.node-version }}
 
       - name: 'Run tests'
