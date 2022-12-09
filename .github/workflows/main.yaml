@@ -1,29 +1,18 @@
-name: 'Test'
-
+name: Publish Docker
 on:
-  pull_request:
-  # Limit push events to "main" branch
   push:
     branches: [ 'main' ]
 
 jobs:
-  test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ 'windows-latest' ]
-        node-version: [ '16.x' ]
+  build:
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: elgohr/Publish-Docker-Github-Action@v5
-      - name: 'Use Node.js v${{ matrix.node-version }}'
-        uses: actions/setup-node@v3
+      - name: Publish to Registry
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
-            registry: docker.pkg.github.com
-            name: docker.pkg.github.com/PogunGun/NestJS
-            username: ${{ secrets.DOCKER_USERNAME }}
-            password: ${{ secrets.DOCKER_PASSWORD }}
-            node-version: ${{ matrix.node-version }}
-
-      - name: 'Run tests'
-        run: yarn install && npm test
+          registry: docker.pkg.github.com
+          name: docker.pkg.github.com/PogunGun/NestJS
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          tags: "develop"
