@@ -3,6 +3,5 @@ WORKDIR /opt/app
 ADD package.json package.json
 RUN yarn install
 ADD . .
-RUN npm run build
-RUN npm prune --production
+RUN yarn run build
 CMD ["node","./dist/main.js"]
