@@ -9,7 +9,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout rootfs
-        uses: action/checkout@master
+        uses: action/checkout@main
       - name: Publish to registry
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
