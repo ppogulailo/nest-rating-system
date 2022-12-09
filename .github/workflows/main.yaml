@@ -1,4 +1,5 @@
 name: Publish Docker
+
 on:
   push:
     branches: [ 'main' ]
