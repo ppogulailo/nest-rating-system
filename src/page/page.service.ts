@@ -42,7 +42,9 @@ export class PageService {
   async findByText(text) {
     return this.pageModel.find({ $text: { $search: text, $caseSensitive: false } }).exec();
   }
-
+  async findAll(){
+    return this.pageModel.find({}).exec();
+  }
   async updateById(id: string, dto: CreatePageDto) {
     return this.pageModel.findByIdAndUpdate(id, dto, { new: true }).exec();
   }
