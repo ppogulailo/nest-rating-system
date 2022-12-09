@@ -1,0 +1,20 @@
+name: Publish Docker
+
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    step:
+      - uses: action/checkout@master
+      - name: Publish to registry
+      - uses: elgohr/Publish-Docker-Github-Action@v5
+        with:
+          registry: docker.pkg.github.com
+          name: docker.pkg.github.com/PogunGun/NestJS
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          tags: "develop"
