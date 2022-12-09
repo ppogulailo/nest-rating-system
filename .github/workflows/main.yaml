@@ -3,12 +3,12 @@ name: Publish Docker
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 jobs:
   build:
     runs-on: windows-latest
     steps:
-      - uses: action/checkout@master
+      - uses: action/checkout@main
       - name: Publish to registry
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
