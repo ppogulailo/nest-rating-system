@@ -1,6 +1,12 @@
-import { prop } from "@typegoose/typegoose";
-import { Type } from "class-transformer";
-import { IsArray, IsNumber, IsOptional, IsString, ValidateNested } from "class-validator";
+import { prop } from '@typegoose/typegoose';
+import { Type } from 'class-transformer';
+import {
+  IsArray,
+  IsNumber,
+  IsOptional,
+  IsString,
+  ValidateNested,
+} from 'class-validator';
 
 class ProductCharacteristicsDto {
   @IsString()
@@ -41,6 +47,6 @@ export class CreateProductDto {
 
   @IsArray()
   @ValidateNested()
-  @Type(()=>ProductCharacteristicsDto)
+  @Type(() => ProductCharacteristicsDto)
   characteristics: ProductCharacteristicsDto[];
 }

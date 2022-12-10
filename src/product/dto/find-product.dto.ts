@@ -1,8 +1,8 @@
-import { IsNumber, IsString } from "class-validator";
+import { IsNumber, IsString } from 'class-validator';
 
-export class FindProductDto{
+export class FindProductDto {
   @IsString()
-  category:string;
+  category: string;
   @IsNumber()
-  limit:number;
+  limit: number;
 }

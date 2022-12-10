@@ -1,7 +1,7 @@
-import { Inject, Injectable } from "@nestjs/common";
-import { Telegraf } from "telegraf";
-import { ITelegramInterface } from "./telegram.interface";
-import { TELEGRAM_MODULE_OPTIONS } from "./telegram.constants";
+import { Inject, Injectable } from '@nestjs/common';
+import { Telegraf } from 'telegraf';
+import { ITelegramInterface } from './telegram.interface';
+import { TELEGRAM_MODULE_OPTIONS } from './telegram.constants';
 
 @Injectable()
 export class TelegramService {

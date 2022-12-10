@@ -1,63 +1,69 @@
-import { IsArray, IsEnum, IsNumber, IsOptional, IsString, ValidateNested } from "class-validator";
-import { Type } from "class-transformer";
+import {
+  IsArray,
+  IsEnum,
+  IsNumber,
+  IsOptional,
+  IsString,
+  ValidateNested,
+} from 'class-validator';
+import { Type } from 'class-transformer';
 
-export enum TopLevelCategory{
+export enum TopLevelCategory {
   Courses,
   Services,
   Books,
-  Products ,
+  Products,
 }
-export class HhDataDto{
+export class HhDataDto {
   @IsNumber()
-  count:number;
+  count: number;
   @IsNumber()
-  juniorSalary:number;
+  juniorSalary: number;
   @IsNumber()
-  middleSalary:number;
+  middleSalary: number;
   @IsNumber()
-  seniorSalary:number;
+  seniorSalary: number;
 }
-export  class PageAdvantageDto{
+export class PageAdvantageDto {
   @IsString()
-  title:string;
+  title: string;
   @IsString()
-  description:string;
+  description: string;
 }
-export class CreatePageDto{
-
+export class CreatePageDto {
   @IsEnum(TopLevelCategory)
-  firstCategory:TopLevelCategory;
+  firstCategory: TopLevelCategory;
 
   @IsString()
-  secondCategory:string;
+  secondCategory: string;
 
   @IsString()
-  alias:string
+  alias: string;
 
   @IsString()
-  title:string;
+  title: string;
 
   @IsString()
-  category:string;
+  category: string;
 
   @IsOptional()
   @ValidateNested()
-  @Type(()=>HhDataDto)
-  hh?:HhDataDto
+  @Type(() => HhDataDto)
+  hh?: HhDataDto;
 
   @IsArray()
   @ValidateNested()
-  @Type(()=>PageAdvantageDto)
-  advantages:PageAdvantageDto[];
+  @Type(() => PageAdvantageDto)
+  advantages: PageAdvantageDto[];
 
   @IsString()
-  seoText:string;
+  seoText: string;
 
   @IsString()
-  tagsTitle:string;
+  tagsTitle: string;
 
   @IsOptional()
   @IsArray()
   @IsString({ each: true })
-  tags?:string[]
+  tags?: string[];
 }
