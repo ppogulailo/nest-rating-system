@@ -50,6 +50,7 @@
     "rxjs": "^7.2.0",
     "sharp": "^0.31.2",
     "sharps": "^3.0.3",
+    "telegraf": "^4.11.2",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
