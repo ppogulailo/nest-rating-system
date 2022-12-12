@@ -10,6 +10,7 @@ module.exports = {
 
     sourceType: 'module',
 
+
   },
 
   plugins: ['@typescript-eslint/eslint-plugin'],
