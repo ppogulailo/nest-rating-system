@@ -20,7 +20,7 @@ const getMongoString = (configService: ConfigService) =>
   // configService.get("MONGO_PORT") +
   // "/" +
   // configService.get("MONGO_AUTH_DATABASE");
-  'mongodb+srv://Pogun:diqGvhr2@cluster0.c3tqnta.mongodb.net/?retryWrites=true&w=majority';
+
 
 const getMongoOptions = () => ({
   useNewUrlParser: true,
